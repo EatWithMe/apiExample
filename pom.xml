@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>NAME_PIBLIC</groupId>
+    <artifactId>ID_PUBLIC</artifactId>
+    <version>1.0.0</version>
+
+    <properties>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <java.version>1.8</java.version>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <project.encoding>UTF-8</project.encoding>
+        <project.build.sourceEncoding>${project.encoding}</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${project.encoding}</project.reporting.outputEncoding>
+        <aspectj.version>1.8.10</aspectj.version>
+        <env>DEV</env>
+
+        <test-it-maven-plugin.version>1.17</test-it-maven-plugin.version>
+        <test-it-maven-plugin.url>LINK_TO_TEST_IT</test-it-maven-plugin.url>
+        <test-it-maven-plugin.projectid>000</test-it-maven-plugin.projectid>
+        <test-it-maven-plugin.apiToken>000</test-it-maven-plugin.apiToken>
+        <test-it-maven-plugin.namespace>namespace</test-it-maven-plugin.namespace>
+
+        <parallelCount>1</parallelCount>
+
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>5.7.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit5</artifactId>
+            <version>2.14.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>5.23.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-selenide</artifactId>
+            <version>2.14.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>4.3.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured-common</artifactId>
+            <version>4.3.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-path</artifactId>
+            <version>4.3.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>xml-path</artifactId>
+            <version>4.3.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-rest-assured</artifactId>
+            <version>2.14.0</version>
+        </dependency>
+        <!-- swagger here  -->
+        <dependency>
+            <groupId>io.swagger.core.v3</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>2.1.11</version>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>1.6.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>2.7.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp</groupId>
+            <artifactId>logging-interceptor</artifactId>
+            <version>2.7.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.6</version>
+        </dependency>
+        <dependency>
+            <groupId>io.gsonfire</groupId>
+            <artifactId>gson-fire</artifactId>
+            <version>1.8.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.threeten</groupId>
+            <artifactId>threetenbp</artifactId>
+            <version>1.5.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.9.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.awaitility</groupId>
+            <artifactId>awaitility</artifactId>
+            <version>4.1.1</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.typesafe</groupId>
+            <artifactId>config</artifactId>
+            <version>1.4.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.6.3.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.3.1</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+                <configuration>
+                    <parallel>methods</parallel>
+                    <threadCount>${parallelCount}</threadCount>
+                    <perCoreThreadCount>true</perCoreThreadCount>
+                    <perCoreThreadCount>${parallelCount}</perCoreThreadCount>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                        -Dfile.encoding=UTF-8
+                        -Denv=${env}
+                    </argLine>
+                    <failIfNoTests>true</failIfNoTests>
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <systemPropertyVariables>
+                        <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+                    </systemPropertyVariables>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.10.0</version>
+            </plugin>
+
+            <!--  Плагин для выгрузки результатов автотестов в tms Test-IT-->
+            <plugin>
+                <groupId>ru.yyy.tests.tms</groupId>
+                <artifactId>test-it-maven-plugin</artifactId>
+                <version>${test-it-maven-plugin.version}</version>
+                <configuration>
+                    <url>${test-it-maven-plugin.url}</url>
+                    <projectId>${test-it-maven-plugin.projectid}</projectId>
+                    <apiToken>${test-it-maven-plugin.apiToken}</apiToken>
+                    <debug>false</debug>
+                    <!--                    <namespace>${test-it-maven-plugin.namespace}</namespace>-->
+                    <!--<tmsConfigurationName></tmsConfigurationName>-->
+                    <!--<tmsTestRunName></tmsTestRunName>-->
+                    <!--                    <debug>true</debug>-->
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <profiles>
+
+
+        <profile>
+            <id>openapi-generator</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.openapitools</groupId>
+                        <artifactId>openapi-generator-maven-plugin</artifactId>
+                        <version>5.1.0</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>generate</goal>
+                                </goals>
+                                <configuration>
+                                    <inputSpec>src/test/resources/contracts/contract_v1.6.3.14.yml</inputSpec>
+                                    <output>${project.build.directory}/generated-sources/swagger</output>
+                                    <generatorName>java</generatorName>
+                                    <!--                            <language>java</language>-->
+                                    <configOptions>
+                                        <dateLibrary>java8</dateLibrary>
+                                    </configOptions>
+                                    <library>rest-assured</library>
+									<skipValidateSpec>true</skipValidateSpec>
+                                    <generateApiTests>false</generateApiTests>
+                                    <generateApiDocumentation>false</generateApiDocumentation>
+                                    <generateModelDocumentation>false</generateModelDocumentation>
+                                    <apiPackage>sZZZ</apiPackage>
+                                    <modelPackage>sZZZ.model</modelPackage>
+                                    <invokerPackage>sZZZ.pack</invokerPackage>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>dev</id>
+            <repositories>
+                <repository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>central</id>
+                    <name>libs-release</name>
+                    <url>local_maven_url</url>
+                </repository>
+                <repository>
+                    <snapshots/>
+                    <id>snapshots</id>
+                    <name>libs-snapshot</name>
+                    <url>local_maven_url/repository/maven-public</url>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>central</id>
+                    <name>plugins-release</name>
+                    <url>local_maven_url/repository/maven-public</url>
+                </pluginRepository>
+                <pluginRepository>
+                    <snapshots/>
+                    <id>snapshots</id>
+                    <name>plugins-snapshot</name>
+                    <url>local_maven_url/repository/maven-public</url>
+                </pluginRepository>
+            </pluginRepositories>
+
+        </profile>
+
+        <profile>
+            <id>preprod</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <repositories>
+                <repository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>central</id>
+                    <name>libs-release</name>
+                    <url>local_maven_url</url>
+                </repository>
+                <repository>
+                    <snapshots/>
+                    <id>snapshots</id>
+                    <name>libs-snapshot</name>
+                    <url>local_maven_url</url>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>central</id>
+                    <name>plugins-release</name>
+                    <url>local_maven_url</url>
+                </pluginRepository>
+                <pluginRepository>
+                    <snapshots/>
+                    <id>snapshots</id>
+                    <name>plugins-snapshot</name>
+                    <url>local_maven_url</url>
+                </pluginRepository>
+            </pluginRepositories>
+
+        </profile>
+    </profiles>
+
+</project>
